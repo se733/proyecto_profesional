@@ -11,12 +11,9 @@ const Navbar = () => {
   const logoutHandler = (e) => {
     e.preventDefault();
     dispatch(logoutRequest())
-      // .then(() => dispatch(setUser()));
       .then(() => navigate("/login") & localStorage.removeItem("user"))
       .catch((err) => console.log(err));
   };
-
-  // console.log(JSON.parse(user).name);
 
   return (
     <nav class="navbar navbar-expand-lg navbar-light navbar1_ ">
@@ -52,23 +49,10 @@ const Navbar = () => {
             {!user ? (
               <>
                 <li class="nav-item">
-                  <Link
-                    class="nav-link"
-                    to="/login"
-                    // id="navbarDropdown"
-                    role="button"
-                    // data-bs-toggle="dropdown"
-                    // aria-expanded="false"
-                  >
+                  <Link class="nav-link" to="/login" role="button">
                     Iniciar Sesion
                   </Link>
                 </li>
-                {/* <ul class="dropdown-menu" aria-labelledby="navbarDropdown"> */}
-                {/* <li>
-                <Link className="dropdown-item" to="/login">
-                  Iniciar
-                </Link>
-              </li> */}
                 <li>
                   <Link to="/register" className="nav-link">
                     Registrarse
@@ -78,9 +62,9 @@ const Navbar = () => {
             ) : (
               <>
                 <li>
-                   <Link to={`/profile/`} className="nav-link user">
+                  <Link to={`/profile/`} className="nav-link user">
                     {JSON.parse(user).name}
-                  </Link> 
+                  </Link>
                 </li>
                 <li>
                   <Link

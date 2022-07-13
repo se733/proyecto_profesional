@@ -7,6 +7,6 @@ export const defaultPropertiesRequest = createAsyncThunk('SEND_ALL_PROPERTIES', 
 })
 
 export const defaultPropertiesReducer = createReducer([], {
-    [defaultPropertiesRequest.fullfilled]:(state,action) => action.payload
+    [defaultPropertiesRequest.fulfilled]:(state,action) => action.payload
 });
 

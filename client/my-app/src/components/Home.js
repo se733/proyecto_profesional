@@ -1,8 +1,11 @@
 import React from "react";
 import Carrusel from "./Carrusel";
-import Featured from "./Featured";
+import PropertiesList from "../commons/PropertiesList";
 
 const Home = () => {
+
+
+
   return (
     <>
       <div>
@@ -10,7 +13,7 @@ const Home = () => {
         <div className="destacados">
           <h1>Propiedades Destacadas</h1>
         </div>
-        <Featured />
+        <PropertiesList />
       </div>
     </>
   );

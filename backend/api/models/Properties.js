@@ -6,7 +6,7 @@ class Properties extends s.Model {}
 Properties.init(
 {
     name: {
-        type: s.STRING
+        type: s.TEXT
     },
     price: {
         type: s.FLOAT

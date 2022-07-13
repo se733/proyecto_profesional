@@ -123,3 +123,16 @@ body {
   width: 335px;
   height: 200px;
 }
+
+.prop_item {
+  width: 1300px;
+  /* height: 550px; */
+}
+
+.card-d {
+  width: 450px;
+  height: 270px;
+  padding-bottom: 15px; 
+  margin-right: 80px;
+}
+

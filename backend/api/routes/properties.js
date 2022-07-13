@@ -1,6 +1,7 @@
 const express = require("express");
 const Properties = require("../models/Properties");
 const PropertiesRouter = express.Router();
+const { Op } = require('sequelize')
 
 //devuelve todas las rutas
 PropertiesRouter.get("/", (req, res, next) => {
@@ -33,6 +34,23 @@ PropertiesRouter.delete("/delete/:id", (req, res, next) => {
     where: { id: req.params.id },
   })
     .then(() => res.sendStatus(202))
+    .catch(next);
+});
+
+//ruta para search
+PropertiesRouter.get("/search/:name", (req, res, next) => {
+  const { name } = req.params;
+  // console.log(name);
+  const lower = name.toLowerCase();
+  Properties.findAll({
+     where: {
+      name: { [Op.like]: "%" + lower + "%" },
+    },
+  })
+  .then((search) => {
+    console.log(search);
+    res.send(search);
+  })
     .catch(next);
 });
 
