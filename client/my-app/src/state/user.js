@@ -25,6 +25,13 @@ export const editUserRequest = createAsyncThunk(
   }
 );
 
+// export const promoteAdminRequest = createAsyncThunk(
+//   "SEND_PROMOTION_REQUEST",
+//   (data) => {
+//     return axios.put("http://localhost:3001/api/users/promote", data).then((res) => res.data);
+//   }
+// );
+
 export const setUser = createAsyncThunk("SET_USER", () => {
   const localUser = JSON.parse(localStorage.getItem("user"));
 
@@ -46,6 +53,8 @@ const useReducer = createReducer(
     [loginRequest.fulfilled]: (state, action) => action.payload,
     // [setUser.fulfilled]: (state, action) => action.payload,
     [logoutRequest.fulfilled]: (state, action) => action.payload,
+    // [promoteAdminRequest.fulfilled]: (state, action) =>
+    //   localStorage.setItem("user", JSON.stringify(action.payload)),
     //  === "OK" && localStorage.removeItem("user",null)
     [editUserRequest.fulfilled]: (state, action) =>
       localStorage.setItem("user", JSON.stringify(action.payload)),

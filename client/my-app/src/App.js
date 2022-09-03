@@ -10,6 +10,7 @@ import Search from "./commons/Search";
 import { Routes, Route } from "react-router";
 import Register from "./components/Register";
 import PropertiesItem from "./commons/PropertiesItem";
+// import Admin from "./components/Admin";
 
 const App = () => {
   return (
@@ -24,6 +25,7 @@ const App = () => {
           <Route path="/contact" element={<Contact />} />
           <Route path="/properties" element={<Properties />} />
           <Route path="/profile" element={<Profile />} />
+          {/* <Route path="/profile/admin" element={<Admin />} /> */}
           <Route path="/properties/properties-item/:id" element={<PropertiesItem/>} />
           <Route path="/search/" element={<Search />} />
           <Route path="/search/:name" element={<Search />} />

@@ -20,6 +20,15 @@ UsersRouter.post("/login", passport.authenticate("local"), (req, res) => {
   });
 });
 
+// UsersRouter.put("/promote", (req, res, next) => {
+//   const {id} = req.body
+//   Users.update({ type: "admin" }, { where: { id:id }, returning: true })
+//     .then(([affectedRows, user]) => {
+//       res.send(user[0]);
+//     })
+//     .catch(next);
+// });
+
 UsersRouter.post("/logout", (req, res, next) => {
   console.log('entrando al logout');
   req.logout(function (err) {

@@ -6,6 +6,6 @@ export const setSearch = createAsyncThunk("SET_WAY_TO_FILTER", (name) => {
     .then((res) => res.data)
 });
 
-export const setSearchReducer = createReducer({}, {
+export const setSearchReducer = createReducer([], {
     [setSearch.fulfilled]:(state,action) => action.payload
 });

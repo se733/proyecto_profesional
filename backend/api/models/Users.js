@@ -35,9 +35,9 @@ Users.init(
       //   address: {
       //     type: s.STRING,
       //   },
-      //   type: {
-      //     type: s.STRING,
-      //   },
+        // type: {
+        //   type: s.STRING,
+        // },
     },
     salt: {
       type: s.STRING,

@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
-// import { Link } from "react-router-dom";
+import { Link } from "react-router-dom";
 import useInput from "../hooks/useInput";
 import { editUserRequest, setUser } from "../state/user";
 
@@ -65,7 +65,9 @@ const Profile = () => {
             />
           </div>
         ) : (
-          <h6>{user.address ? user.address : "Aun no hay direcciones guardadas"}</h6>
+          <h6>
+            {user.address ? user.address : "Aun no hay direcciones guardadas"}
+          </h6>
         )}
 
         <input style={{ display: "none" }} />
@@ -87,6 +89,11 @@ const Profile = () => {
         </div>
         <div className="col"></div>
       </div>
+      <Link to="/profile/admin">
+        <button class="btn btn-secondary text-white mt-3" type="submit">
+          Ingresar como administrador
+        </button>
+      </Link>
     </div>
   );
 };
